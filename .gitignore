@@ -1,0 +1,17 @@
+# Odoo files
+*.pyc
+__pycache__/
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+
+# Python environment files
+.env
+*.env
+
+# VSCode settings
+.vscode/
