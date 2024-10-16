@@ -12,7 +12,16 @@
         "views/dudoxx_audio_manager_views.xml",
         "data/data.xml"
     ],
+    "assets": {
+        "web.assets_backend": [
+           
+            "/dudoxx_audio_manager/static/src/js/audio_player_widget.js",
+            "/dudoxx_audio_manager/static/src/xml/audio_player_widget_template.xml",
+            "/dudoxx_audio_manager/static/src/css/dudoxx_audio_manager.css",
+            "/dudoxx_audio_manager/static/src/css/audio_player_widget.css",
+        ]
+    },
     "installable": True,
     "application": True,
-    "license": "Dudoxx UG (GmbH)"
+    "license": "LGPL-3"
 }

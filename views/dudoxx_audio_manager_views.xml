@@ -1,4 +1,5 @@
 <odoo>
+    <!-- Form View -->
     <record id="view_audio_recording_form" model="ir.ui.view">
         <field name="name">audio.recording.form</field>
         <field name="model">dudoxx.audio.recording</field>
@@ -6,9 +7,13 @@
             <form string="Audio Recording">
                 <sheet>
                     <group>
+                        <group>
+                            <field name="file" widget="audio_player"/>
+                        </group>
                         <field name="name"/>
-                        <field name="file"/>
+                        <field name="file" filename="filename"/>
                         <field name="duration"/>
+                        <field name="filename"/>
                         <field name="language_id"/>
                         <field name="transcription"/>
                         <field name="translation_ids"/>
@@ -23,6 +28,7 @@
         </field>
     </record>
 
+    <!-- Tree View -->
     <record id="view_audio_recording_tree" model="ir.ui.view">
         <field name="name">audio.recording.tree</field>
         <field name="model">dudoxx.audio.recording</field>
@@ -37,6 +43,7 @@
         </field>
     </record>
 
+    <!-- Kanban View -->
     <record id="view_audio_recording_kanban" model="ir.ui.view">
         <field name="name">audio.recording.kanban</field>
         <field name="model">dudoxx.audio.recording</field>
@@ -45,15 +52,56 @@
                 <field name="name"/>
                 <field name="duration"/>
                 <field name="status"/>
+                
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div class="oe_kanban_details">
+                                <strong t-esc="record.name.value"/>
+                                <div>Status: <span t-esc="record.status.value"/></div>
+                                <div>Duration: <span t-esc="record.duration.value"/> sec</div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
             </kanban>
         </field>
     </record>
 
+    <!-- Action for Audio Recording -->
     <record id="action_audio_recording" model="ir.actions.act_window">
         <field name="name">Audio Recordings</field>
         <field name="res_model">dudoxx.audio.recording</field>
         <field name="view_mode">tree,form,kanban</field>
     </record>
 
-    <menuitem id="menu_audio_recording" name="Audio Recordings" action="action_audio_recording" parent="base.menu_custom"/>
+    <!-- Main Menu Item -->
+    <menuitem id="menu_audio_recording" name="Audio Recordings" />
+
+    <!-- Action and Menu for Translations -->
+    <record id="action_audio_translation" model="ir.actions.act_window">
+        <field name="name">Translations</field>
+        <field name="res_model">dudoxx.audio.translation</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_audio_translation" name="Translations" action="action_audio_translation" parent="menu_audio_recording"/>
+
+    <!-- Action and Menu for Audio Chunks -->
+    <record id="action_audio_chunk" model="ir.actions.act_window">
+        <field name="name">Audio Chunks</field>
+        <field name="res_model">dudoxx.audio.chunk</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_audio_chunk" name="Audio Chunks" action="action_audio_chunk" parent="menu_audio_recording"/>
+
+    <!-- Action and Menu for Audio Folders -->
+    <record id="action_audio_folder" model="ir.actions.act_window">
+        <field name="name">Audio Folders</field>
+        <field name="res_model">dudoxx.audio.folder</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_audio_folder" name="Audio Folders" action="action_audio_folder" parent="menu_audio_recording"/>
 </odoo>

@@ -1,0 +1,14 @@
+<odoo>
+    <record id="default_audio_recording" model="dudoxx.audio.recording">
+        <field name="name">Sample Recording</field>
+        <field name="duration">120.0</field>
+        <field name="language_id" ref="base.lang_en"/>
+        <field name="transcription">This is a sample transcription for the audio recording.</field>
+    </record>
+
+    <record id="default_audio_translation" model="dudoxx.audio.translation">
+        <field name="recording_id" ref="default_audio_recording"/>
+        <field name="language_id" ref="base.lang_fr"/>
+        <field name="translated_text">Ceci est une transcription d'échantillon pour l'enregistrement audio.</field>
+    </record>
+</odoo>

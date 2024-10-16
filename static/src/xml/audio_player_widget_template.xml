@@ -1,0 +1,63 @@
+<templates>
+	<t t-name="dudoxx_audio_manager.AudioPlayerWidget" owl="1">
+		<div class="o_audio_player_widget">
+			<audio t-ref="audioElement" t-att-src="state.dataUrl" t-on-timeupdate="updateProgress" t-on-loadedmetadata="setDuration">
+			</audio>
+			<!-- Progress Bar with Time Display -->
+			<div class="progress-container">
+				<!-- Vibrating Bars -->
+				<div class="vibrating-bars">
+					<div>
+					</div>
+					<div>
+					</div>
+					<div>
+					</div>
+					<div>
+					</div>
+					<div>
+					</div>
+					<div>
+					</div>
+
+                    <div>
+					</div>
+					<div>
+					</div>
+					<div>
+					</div>
+					<div>
+					</div>
+					<div>
+					</div>
+					<div>
+					</div>
+				</div>
+				<div class="progress-bar" t-on-click="onProgressBarClick">
+					<div class="progress" t-att-style="'width: ' + state.progress + '%'">
+					</div>
+				</div>
+				<div class="time-display">
+					<span t-esc="formatTime(state.currentTime)" />
+					/
+					<span t-esc="formatTime(state.duration)" />
+				</div>
+			</div>
+			<!-- Control Buttons Below the Progress Bar -->
+			<div class="controls">
+				<button t-on-click="play" t-att-disabled="state.isPlaying">
+					<i class="fa fa-play">
+					</i>
+				</button>
+				<button t-on-click="pause" t-att-disabled="!state.isPlaying">
+					<i class="fa fa-pause">
+					</i>
+				</button>
+				<button t-on-click="stop">
+					<i class="fa fa-stop">
+					</i>
+				</button>
+			</div>
+		</div>
+	</t>
+</templates>

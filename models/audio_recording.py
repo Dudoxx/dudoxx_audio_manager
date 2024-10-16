@@ -4,8 +4,9 @@ class AudioRecording(models.Model):
     _name = 'dudoxx.audio.recording'
     _description = 'Audio Recording'
 
-    name = fields.Char(string='Recording Title', required=True)
-    file = fields.Binary(string='Audio File')
+    name = fields.Char(string='Recording Title', required=False, default="New Recording")
+    file = fields.Binary(string='Audio File', default="empty_audio_file")
+    filename = fields.Char(string='File Name', default="Audio File Name")  # New field to store the filename
     duration = fields.Float(string='Duration (seconds)')
     language_id = fields.Many2one('res.lang', string='Language')
     transcription = fields.Text(string='Transcription')
