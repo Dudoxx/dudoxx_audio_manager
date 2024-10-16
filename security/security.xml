@@ -1,0 +1,26 @@
+<odoo>
+    <record id="group_audio_manager_admin" model="res.groups">
+        <field name="name">Audio Manager Admin</field>
+        <field name="category_id" ref="base.module_category_tools"/>
+    </record>
+
+    <record id="group_audio_manager_user" model="res.groups">
+        <field name="name">Audio Manager User</field>
+        <field name="category_id" ref="base.module_category_tools"/>
+    </record>
+
+    <record id="group_audio_manager_transcriber" model="res.groups">
+        <field name="name">Transcriber</field>
+        <field name="category_id" ref="base.module_category_tools"/>
+    </record>
+
+    <record id="group_audio_manager_translator" model="res.groups">
+        <field name="name">Translator</field>
+        <field name="category_id" ref="base.module_category_tools"/>
+    </record>
+
+    <record id="group_audio_manager_reviewer" model="res.groups">
+        <field name="name">Reviewer</field>
+        <field name="category_id" ref="base.module_category_tools"/>
+    </record>
+</odoo>

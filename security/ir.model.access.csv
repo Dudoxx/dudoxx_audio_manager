@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_audio_recording_user,access_audio_recording_user,model_dudoxx_audio_recording,,1,1,1,0
+access_audio_translation_user,access_audio_translation_user,model_dudoxx_audio_translation,,1,1,1,0
+access_audio_chunk_user,access_audio_chunk_user,model_dudoxx_audio_chunk,,1,1,1,0
+access_audio_folder_user,access_audio_folder_user,model_dudoxx_audio_folder,,1,1,1,0

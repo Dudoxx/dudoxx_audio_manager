@@ -1,0 +1,59 @@
+<odoo>
+    <record id="view_audio_recording_form" model="ir.ui.view">
+        <field name="name">audio.recording.form</field>
+        <field name="model">dudoxx.audio.recording</field>
+        <field name="arch" type="xml">
+            <form string="Audio Recording">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="file"/>
+                        <field name="duration"/>
+                        <field name="language_id"/>
+                        <field name="transcription"/>
+                        <field name="translation_ids"/>
+                        <field name="chunk_ids"/>
+                        <field name="folder_id"/>
+                        <field name="cloud_storage_url"/>
+                        <field name="status"/>
+                        <field name="owner_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_audio_recording_tree" model="ir.ui.view">
+        <field name="name">audio.recording.tree</field>
+        <field name="model">dudoxx.audio.recording</field>
+        <field name="arch" type="xml">
+            <tree string="Audio Recordings">
+                <field name="name"/>
+                <field name="duration"/>
+                <field name="language_id"/>
+                <field name="status"/>
+                <field name="create_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_audio_recording_kanban" model="ir.ui.view">
+        <field name="name">audio.recording.kanban</field>
+        <field name="model">dudoxx.audio.recording</field>
+        <field name="arch" type="xml">
+            <kanban string="Audio Recordings">
+                <field name="name"/>
+                <field name="duration"/>
+                <field name="status"/>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="action_audio_recording" model="ir.actions.act_window">
+        <field name="name">Audio Recordings</field>
+        <field name="res_model">dudoxx.audio.recording</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    <menuitem id="menu_audio_recording" name="Audio Recordings" action="action_audio_recording" parent="base.menu_custom"/>
+</odoo>

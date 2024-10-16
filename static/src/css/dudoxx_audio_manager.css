@@ -1,0 +1,23 @@
+/* Custom styles for Dudoxx Audio Manager */
+
+.audio-player {
+    width: 100%;
+    height: auto;
+    margin: 10px 0;
+}
+
+.recording-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.recording-title {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.recording-status {
+    color: green;
+}
